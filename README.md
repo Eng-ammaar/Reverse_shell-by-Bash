@@ -1,11 +1,25 @@
 # Reverse_shell-by-Bash
 
-[1] Bash_shell 
-[2] Python_shell 
-[3] Perl_shell 
-[4] Ruby_shell 
-[5] Netcat_shell 
-[6] PHP_shell
+Bash & Python & Perl & Ruby & Netcat & PHP 
+
+# Installation :
+
+git clone  https://github.com/Eng-ammaar/Reverse_shell-by-Bash.git
 
 
 
+# Usage :
+
+git clone  https://github.com/Eng-ammaar/Reverse_shell-by-Bash.git
+chmod +x ammar.sh 
+bash
+
+
+# Suggestion  :
+
+twitter : @AmmarAlarif10
+Telgram : @root_1038
+
+
+
+# Thank you for use the my script !!! 
