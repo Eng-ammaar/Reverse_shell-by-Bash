@@ -12,7 +12,7 @@ git clone  https://github.com/Eng-ammaar/Reverse_shell-by-Bash.git
 
 git clone  https://github.com/Eng-ammaar/Reverse_shell-by-Bash.git
 chmod +x ammar.sh 
-bash
+bash ammar.sh
 
 # Script image :
 
