@@ -14,7 +14,7 @@ git clone  https://github.com/Eng-ammaar/Reverse_shell-by-Bash.git
 chmod +x ammar.sh 
 bash
 
-# Information about me  :
+# Script image :
 
 ![alt text](https://github.com/Eng-ammaar/Reverse_shell-by-Bash/blob/main/ammar.png?raw=true)
 
@@ -28,3 +28,4 @@ Telgram : @root_1038
 
 
 # Thank you for using the script  !!! 
+# Enjoy
