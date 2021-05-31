@@ -15,7 +15,7 @@ chmod +x ammar.sh
 bash
 
 
-# Suggestion  :
+# Information about me  :
 
 twitter : @AmmarAlarif10
 Telgram : @root_1038
