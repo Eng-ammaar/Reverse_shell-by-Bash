@@ -27,5 +27,4 @@ Telgram : @root_1038
 
 
 
-# Thank you for using the script  !!! 
-# Enjoy
+# Thank you for using the script  !!! ( Enjoy )
